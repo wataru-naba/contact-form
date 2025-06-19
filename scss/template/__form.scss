@@ -1,0 +1,190 @@
+@import '../components/form/_label';
+@import '../components/form/_checkbox';
+@import '../components/form/_input';
+@import '../components/form/_submit';
+@import '../components/form/_select';
+@import '../components/form/_textarea';
+@import '../components/form/_radio';
+form{
+    max-width: 780px;
+    margin: 0 auto;
+}
+dl.formGroup{
+    display: flex;
+    margin-bottom: 20px;
+    dd,dt{
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    dt{
+        flex-basis: 25%;
+        display: flex;
+        align-items: center;
+        label{
+            font-size: 1.4rem;
+            font-weight: bold;
+            position: relative;
+            width: 100%;
+            &.required{
+                &::after{
+                    content: '必須';
+                    position: absolute;
+                    width: 30px;
+                    padding: 3px 0; 
+                    font-size: 1.0rem;
+                    text-align: center;
+                    background: $color-red ;
+                    letter-spacing: 0.1rem;
+                    color: #fff;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    dd{
+        flex-basis: 65%;
+        
+    }
+    @media screen and (max-width: $breakpoint-sp) {
+        flex-direction: column;
+        dd,dt{
+            flex-basis: 100%;
+        }
+    }
+}
+
+.inputName{
+    display: flex;
+    max-width: 400px;
+    input{
+        margin-right: 10px;
+    }
+}
+.inputEmail{
+    max-width: 400px;
+}
+.inputBirth, .inputPeriod,.inputPrice,.inputNum{
+    input{
+        max-width: 80px;
+    }
+}
+
+.inputPassword{
+    max-width: 400px;
+}
+.inputAcademic{
+    display: flex;
+    justify-content: flex-start;
+    & > div{
+        box-sizing: border-box;
+        margin: 0;
+        margin-right: 1%;
+        &:nth-child(1){
+            flex-basis: 30%;
+        }   
+        &:nth-child(2){
+            flex-basis: 20%;
+            padding: 0 20px;
+        }   
+        &:nth-child(3),
+        &:nth-child(4){
+            flex-basis: 20%;
+            max-width: 90px;
+            input{
+                width: 50%;
+                margin-right: 10px;
+            }
+        }
+       
+    }
+}
+
+.privacyCheck{
+    text-align: center;
+    padding: 20px;
+}
+
+.formback{
+    text-align: center;
+    button{
+        border: none;
+        background: none;
+        color: $color-base-blue;
+        cursor: pointer;
+        border-bottom: solid 1px #fff;
+        font-weight: bold;
+        &::before{
+            content: '＜ ';
+        }
+        &:hover{
+            border-bottom: solid 1px $color-base-blue;
+        }
+    }
+    a{
+        color: $color-base-blue;
+        border-bottom: solid 1px #fff;
+        display:inline-block;
+        &::before{
+            content: '＜ ';
+        }
+        &:hover{
+            border-bottom: solid 1px $color-base-blue;
+        }
+    }
+}
+.complate{
+    h3{
+        text-align: center;
+        font-size: $font-size-title-medium;
+        margin-bottom: 40px;
+    }
+    p{
+        width: fit-content;
+        margin: 20px auto;
+        line-height: 2.4rem;
+    }
+    .topback{
+        padding: 40px 0;
+        text-align: center;
+    }
+}
+
+.recruitSearchForm{
+    margin: 0 auto;
+    .age{
+        display: flex;
+        
+        li{
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        input{
+            max-width: 80px;
+        }
+    }
+    ul.qualifications{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        li{
+            box-sizing: border-box;
+            margin: 0;
+            margin-right: 1%;
+            flex-basis: calc(25% - (1% - 0.25%));
+            /* (100 / x - (margin(%) - (margin(%) / x))   */
+            margin-bottom: 2%;
+            &:nth-child(4n){
+                margin-right: 0;
+            }
+            border: solid 1px $color-black ;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.3rem;
+        }
+    }
+}
+.offerForm{
+    margin: 40px 0;
+}

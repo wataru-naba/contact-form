@@ -1,0 +1,20 @@
+
+.form{
+    &--required{
+        position: relative;
+        &::after{
+            content: '必須';
+            position: absolute;
+            display: inline-block;
+            background: #EA3D0C;
+            font-size: 1.2rem;
+            padding:1px 3px;
+            border-radius: 5px;
+            color: #fff;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: normal;
+        }
+    }
+}

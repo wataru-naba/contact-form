@@ -1,0 +1,42 @@
+.submit{
+    width: fit-content;
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+    &::after{
+        content: '';
+        width: 15px;
+        height:21px;
+        background: url('../images/arrow-right.svg') no-repeat;
+        background-size: 100% auto;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    input[type=submit]{
+        background: $color-red ;
+        font-size: $font-size-submit;
+        letter-spacing: 0.1rem;
+        font-weight: 900;
+        color:#fff;
+        padding: 10px;
+        width: 400px;
+        max-width: 100%;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        position: relative;
+        &:hover{
+            background: $color-red ;
+        }
+        &.dark{
+            background: $color-black ;
+        }
+    }
+    &.login,&.passwordReset{
+        input[type=submit]{
+            background: $color-base-blue;
+        }
+    }
+}

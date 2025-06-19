@@ -1,0 +1,457 @@
+@charset "UTF-8";
+/*theme*/
+/*ページュ*/
+.title--contents {
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 60px;
+}
+.title--contents span {
+  display: block;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 10px;
+}
+.title--large {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.title--middle {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/*template*/
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 30px;
+  position: relative;
+  width: auto;
+}
+
+.checkbox::before {
+  background: #fff;
+  border: 1px solid #231815;
+  content: "";
+  display: block;
+  height: 16px;
+  left: 5px;
+  margin-top: -11px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+
+.checkbox::after {
+  border-right: 3px solid #116E92;
+  border-bottom: 3px solid #116E92;
+  content: "";
+  display: block;
+  height: 12px;
+  left: 10px;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
+}
+
+input[type=checkbox]:checked + .checkbox::after {
+  opacity: 1;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number] {
+  padding: 8px;
+  font-size: 1.4rem;
+  border: #1A1818 solid 1px;
+  border-radius: 5px;
+  width: 98%;
+}
+
+.submit {
+  width: fit-content;
+  margin: 20px auto;
+  position: relative;
+  text-align: center;
+}
+.submit::after {
+  content: "";
+  width: 15px;
+  height: 21px;
+  background: url("../images/arrow-right.svg") no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.submit input[type=submit] {
+  background: #B22222;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+  color: #fff;
+  padding: 10px;
+  width: 400px;
+  max-width: 100%;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+}
+.submit input[type=submit]:hover {
+  background: #B22222;
+}
+.submit input[type=submit].dark {
+  background: #1A1818;
+}
+.submit.login input[type=submit], .submit.passwordReset input[type=submit] {
+  background: #116E92;
+}
+
+select {
+  padding: 8px 15px 8px 8px;
+  font-size: 1.4rem;
+  border: #1A1818 solid 1px;
+  border-radius: 5px;
+  width: auto;
+}
+
+textarea {
+  width: 98%;
+  padding: 8px;
+  font-size: 1.4rem;
+  border: #1A1818 solid 1px;
+  border-radius: 5px;
+  min-height: 200px;
+}
+
+.f-radio {
+  display: inline-block;
+  border: solid 1px #1A1818;
+  padding: 15px 0px 15px 10px;
+  border-radius: 5px;
+}
+.f-radio input[type=radio] {
+  /* コンテンツの流れから切り離す */
+  position: absolute;
+  /* 誤ったコードに対処するための回避策 */
+  white-space: nowrap;
+  /* 可能な限り文字サイズを小さくするための処理
+  * (スクリーンリーダー中には height と width が 0 のものを無視するため)
+  */
+  width: 1px;
+  height: 1px;
+  /* オーバーフローしているコンテンツを隠す */
+  overflow: hidden;
+  /* 要素サイズを変更しうるプロパティのリセット */
+  border: 0;
+  padding: 0;
+  /* 要素のどの部分が表示されるかを定義するもの */
+  /* 古いブラウザでは使用できない */
+  clip: rect(0 0 0 0);
+  /* 最近のブラウザ用
+  * コンテンツを非表示にする設定  */
+  clip-path: inset(50%);
+  /* 今現在なぜ-1pxがここで設定されるかは分かっていないそうです。
+  * それに加えていくつか問題もあるそうです 
+  * (参考: https://github.com/h5bp/html5-boilerplate/issues/1985)
+  */
+  margin: -1px;
+}
+.f-radio label {
+  cursor: pointer;
+  padding-left: 30px;
+  padding-right: 45px;
+  position: relative;
+  font-size: 1.4rem;
+}
+.f-radio label::before,
+.f-radio label::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.f-radio label::before {
+  background-color: #fff;
+  border: 1px solid #116E92;
+  height: 20px;
+  width: 20px;
+  left: 5px;
+}
+.f-radio label::after {
+  background-color: #116E92;
+  opacity: 0;
+  height: 16px;
+  width: 16px;
+  left: 8px;
+}
+.f-radio input[type=radio]:checked + label::after {
+  opacity: 1;
+}
+
+.f-radio-input {
+  margin: 10px 0;
+  border: solid 1px #1A1818;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+}
+.f-radio-input input[type=radio] {
+  /* コンテンツの流れから切り離す */
+  position: absolute;
+  /* 誤ったコードに対処するための回避策 */
+  white-space: nowrap;
+  /* 可能な限り文字サイズを小さくするための処理
+  * (スクリーンリーダー中には height と width が 0 のものを無視するため)
+  */
+  width: 1px;
+  height: 1px;
+  /* オーバーフローしているコンテンツを隠す */
+  overflow: hidden;
+  /* 要素サイズを変更しうるプロパティのリセット */
+  border: 0;
+  padding: 0;
+  /* 要素のどの部分が表示されるかを定義するもの */
+  /* 古いブラウザでは使用できない */
+  clip: rect(0 0 0 0);
+  /* 最近のブラウザ用
+  * コンテンツを非表示にする設定  */
+  clip-path: inset(50%);
+  /* 今現在なぜ-1pxがここで設定されるかは分かっていないそうです。
+  * それに加えていくつか問題もあるそうです 
+  * (参考: https://github.com/h5bp/html5-boilerplate/issues/1985)
+  */
+  margin: -1px;
+}
+.f-radio-input .inputPeriod {
+  cursor: pointer;
+  padding-left: 40px;
+  padding-right: 45px;
+  position: relative;
+  font-size: 1.4rem;
+}
+.f-radio-input .inputPeriod::before,
+.f-radio-input .inputPeriod::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.f-radio-input .inputPeriod::before {
+  background-color: #fff;
+  border: 1px solid #116E92;
+  height: 20px;
+  width: 20px;
+  left: 5px;
+}
+.f-radio-input .inputPeriod::after {
+  background-color: #116E92;
+  opacity: 0;
+  height: 16px;
+  width: 16px;
+  left: 8px;
+}
+.f-radio-input input[type=radio]:checked + .inputPeriod::after {
+  opacity: 1;
+}
+
+form {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+dl.formGroup {
+  display: flex;
+  margin-bottom: 20px;
+}
+dl.formGroup dd, dl.formGroup dt {
+  box-sizing: border-box;
+  padding: 10px;
+}
+dl.formGroup dt {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+}
+dl.formGroup dt label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+}
+dl.formGroup dt label.required::after {
+  content: "必須";
+  position: absolute;
+  width: 30px;
+  padding: 3px 0;
+  font-size: 1rem;
+  text-align: center;
+  background: #B22222;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+dl.formGroup dd {
+  flex-basis: 65%;
+}
+@media screen and (max-width: 768px) {
+  dl.formGroup {
+    flex-direction: column;
+  }
+  dl.formGroup dd, dl.formGroup dt {
+    flex-basis: 100%;
+  }
+}
+
+.inputName {
+  display: flex;
+  max-width: 400px;
+}
+.inputName input {
+  margin-right: 10px;
+}
+
+.inputEmail {
+  max-width: 400px;
+}
+
+.inputBirth input, .inputPeriod input, .inputPrice input, .inputNum input {
+  max-width: 80px;
+}
+
+.inputPassword {
+  max-width: 400px;
+}
+
+.inputAcademic {
+  display: flex;
+  justify-content: flex-start;
+}
+.inputAcademic > div {
+  box-sizing: border-box;
+  margin: 0;
+  margin-right: 1%;
+}
+.inputAcademic > div:nth-child(1) {
+  flex-basis: 30%;
+}
+.inputAcademic > div:nth-child(2) {
+  flex-basis: 20%;
+  padding: 0 20px;
+}
+.inputAcademic > div:nth-child(3), .inputAcademic > div:nth-child(4) {
+  flex-basis: 20%;
+  max-width: 90px;
+}
+.inputAcademic > div:nth-child(3) input, .inputAcademic > div:nth-child(4) input {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.privacyCheck {
+  text-align: center;
+  padding: 20px;
+}
+
+.formback {
+  text-align: center;
+}
+.formback button {
+  border: none;
+  background: none;
+  color: #116E92;
+  cursor: pointer;
+  border-bottom: solid 1px #fff;
+  font-weight: bold;
+}
+.formback button::before {
+  content: "＜ ";
+}
+.formback button:hover {
+  border-bottom: solid 1px #116E92;
+}
+.formback a {
+  color: #116E92;
+  border-bottom: solid 1px #fff;
+  display: inline-block;
+}
+.formback a::before {
+  content: "＜ ";
+}
+.formback a:hover {
+  border-bottom: solid 1px #116E92;
+}
+
+.complate h3 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+.complate p {
+  width: fit-content;
+  margin: 20px auto;
+  line-height: 2.4rem;
+}
+.complate .topback {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.recruitSearchForm {
+  margin: 0 auto;
+}
+.recruitSearchForm .age {
+  display: flex;
+}
+.recruitSearchForm .age li {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.recruitSearchForm .age input {
+  max-width: 80px;
+}
+.recruitSearchForm ul.qualifications {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.recruitSearchForm ul.qualifications li {
+  box-sizing: border-box;
+  margin: 0;
+  margin-right: 1%;
+  flex-basis: 24.25%;
+  /* (100 / x - (margin(%) - (margin(%) / x))   */
+  margin-bottom: 2%;
+  border: solid 1px #1A1818;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+.recruitSearchForm ul.qualifications li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.offerForm {
+  margin: 40px 0;
+}/*# sourceMappingURL=style.css.map */

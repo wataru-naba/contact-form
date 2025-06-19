@@ -1,0 +1,144 @@
+
+
+.f-radio{
+    display: inline-block;
+    border: solid 1px $color-black ;
+    padding: 15px 0px 15px 10px;
+    border-radius: 5px;
+    input[type=radio]{
+        /* コンテンツの流れから切り離す */
+        position: absolute;
+        /* 誤ったコードに対処するための回避策 */
+        white-space: nowrap;
+        /* 可能な限り文字サイズを小さくするための処理
+        * (スクリーンリーダー中には height と width が 0 のものを無視するため)
+        */
+        width: 1px;
+        height: 1px;
+        /* オーバーフローしているコンテンツを隠す */
+        overflow: hidden;
+        /* 要素サイズを変更しうるプロパティのリセット */
+        border: 0;
+        padding: 0;
+        /* 要素のどの部分が表示されるかを定義するもの */
+        /* 古いブラウザでは使用できない */
+        clip: rect(0 0 0 0);
+        /* 最近のブラウザ用
+        * コンテンツを非表示にする設定  */
+        clip-path: inset(50%); 
+        /* 今現在なぜ-1pxがここで設定されるかは分かっていないそうです。
+        * それに加えていくつか問題もあるそうです 
+        * (参考: https://github.com/h5bp/html5-boilerplate/issues/1985)
+        */
+        margin: -1px;
+    }
+    label {
+        cursor: pointer;
+        padding-left: 30px;
+        padding-right: 45px;
+        position: relative;
+        font-size: $font-size-input;
+      }
+      
+      label::before,
+      label::after {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+      }
+      
+      label::before {
+        background-color: #fff;
+        border: 1px solid $color-base-blue;
+        height: 20px;
+        width: 20px;
+        left: 5px;
+      }
+      
+      label::after {
+        background-color: $color-base-blue;
+        opacity: 0;
+        height: 16px;
+        width: 16px;
+        left: 8px;
+      }
+      
+      input[type=radio]:checked + label::after {
+        opacity: 1;
+      }
+      
+}
+
+.f-radio-input{
+  margin: 10px 0;
+    border: solid 1px $color-black ;
+    padding: 10px 0px 10px 10px;
+    border-radius: 5px;
+    input[type=radio]{
+      /* コンテンツの流れから切り離す */
+      position: absolute;
+      /* 誤ったコードに対処するための回避策 */
+      white-space: nowrap;
+      /* 可能な限り文字サイズを小さくするための処理
+      * (スクリーンリーダー中には height と width が 0 のものを無視するため)
+      */
+      width: 1px;
+      height: 1px;
+      /* オーバーフローしているコンテンツを隠す */
+      overflow: hidden;
+      /* 要素サイズを変更しうるプロパティのリセット */
+      border: 0;
+      padding: 0;
+      /* 要素のどの部分が表示されるかを定義するもの */
+      /* 古いブラウザでは使用できない */
+      clip: rect(0 0 0 0);
+      /* 最近のブラウザ用
+      * コンテンツを非表示にする設定  */
+      clip-path: inset(50%); 
+      /* 今現在なぜ-1pxがここで設定されるかは分かっていないそうです。
+      * それに加えていくつか問題もあるそうです 
+      * (参考: https://github.com/h5bp/html5-boilerplate/issues/1985)
+      */
+      margin: -1px;
+  }
+  .inputPeriod {
+    cursor: pointer;
+    padding-left: 40px;
+    padding-right: 45px;
+    position: relative;
+    font-size: $font-size-input;
+  }
+  
+  .inputPeriod::before,
+  .inputPeriod::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+  
+  .inputPeriod::before {
+    background-color: #fff;
+    border: 1px solid $color-base-blue;
+    height: 20px;
+    width: 20px;
+    left: 5px;
+  }
+  
+  .inputPeriod::after {
+    background-color: $color-base-blue;
+    opacity: 0;
+    height: 16px;
+    width: 16px;
+    left: 8px;
+  }
+  
+  input[type=radio]:checked + .inputPeriod::after {
+    opacity: 1;
+  }
+}
