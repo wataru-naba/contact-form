@@ -1,5 +1,5 @@
 name: Dump
-decription: |
+description: |
   環境変数とgithub contextをログへ出力します。
   ワークフローのでバックに便利です。
 inputs:
@@ -20,6 +20,7 @@ runs:
       if: ${{ inputs.enable-env == 'true' }}
       env:
         CONTEXT: ${{ toJson(github) }}
+      shell: bash
     - id: current
       run: echo "date=$(date)" >> $GITHUB_OUTPUT
       shell: bash
